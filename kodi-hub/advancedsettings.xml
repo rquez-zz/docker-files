@@ -1,0 +1,13 @@
+<advancedsettings>
+    <videodatabase>
+        <type>mysql</type>
+        <host>0.0.0.0</host>
+        <port>3306</port>
+        <user>kodi</user>
+        <pass>kodi</pass>
+    </videodatabase>
+    <videolibrary>
+        <importwatchedstate>true</importwatchedstate>
+        <importresumepoint>true</importresumepoint>
+    </videolibrary>
+</advancedsettings>
