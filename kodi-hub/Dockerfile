@@ -2,16 +2,9 @@ FROM ubuntu:latest
 
 # Install latest updates
 RUN apt-get update
-RUN apt-get upgrade -y
 
-# Install mysql client and server
-RUN apt-get -y install mysql-client mysql-server curl
-
-# Install samba server
-RUN apt-get install -y samba
-
-# Install Supervisor
-RUN apt-get install -y supervisor
+# Install mysql, samba and supervisor
+RUN apt-get -y install mysql-client mysql-server curl samba supervisor
 
 # Enable remote access (default is localhost only, we change this
 # otherwise our database would not be reachable from outside the container)
@@ -33,4 +26,5 @@ RUN /usr/sbin/smbd && sleep 10 && smbcontrol smbd shutdown
 
 EXPOSE 137 138 139 445 3306
 
+# Start supervisor on run
 CMD /usr/bin/supervisord
